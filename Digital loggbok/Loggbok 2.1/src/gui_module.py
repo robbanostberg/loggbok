@@ -4,6 +4,7 @@ from PIL import Image, ImageTk
 from datetime import datetime, timedelta
 from member import Member
 import paths
+import pyautogui	
 
 # Variabler för namn, font, storlek och så vidare i vyn
 styret_namelist = ""
@@ -48,6 +49,12 @@ interactive_area_width = main_window_width
 message_height = message_area_height - input_area_height
 message_width = message_area_width
 input_area_width = message_area_width
+
+# Frågar efter CID för mount av Z-disk
+cid = pyautogui.prompt(text='Enter CID for mounting Z-drive', title='' , default='')
+
+# Frågar efter lösen för mount av Z-disk
+pw = pyautogui.password(text='Enter password for mounting Z-drive', title='', default='', mask='*')
 
 # Mögen nedanför skapar layouten till programet
 root = tk.Tk()
